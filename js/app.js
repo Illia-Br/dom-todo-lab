@@ -1,19 +1,28 @@
 
 // Cashed element references
 const inputEl = document.getElementById('inp');
-const buttonEl = document.querySelector('#submit-button');
+const addButtonEl = document.querySelector('#submit-button');
 const ulEl = document.querySelector('ul');
+const resetButtonEl = document.querySelector('#reset-button');
 
 // Event Listeners
 
-buttonEl.addEventListener('click', function(evt) {
+addButtonEl.addEventListener('click', function(evt) {
   let newLi = document.createElement('li');
   newLi.textContent = inputEl.value;
   inputEl.value = '';
-  let checkAllSpaces = newLi.textContent.split('').every(element => element === ' ');
+  let checkAllSpaces = newLi.textContent.split('').every(element => element === ' '); // checks if input is spaces only
   if (newLi.textContent && !checkAllSpaces) {
     ulEl.appendChild(newLi);
   }
 })
+
+resetButtonEl.addEventListener('click', function(evt) {
+  let allLis = document.querySelectorAll('#todo-list li');
+  allLis.forEach(li => li.remove());
+  inputEl.value = '';
+})
+
+
 
 console.log(inputEl);
