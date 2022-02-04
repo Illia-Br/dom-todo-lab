@@ -27,5 +27,3 @@ ulEl.addEventListener('click', function(evt) {
   evt.target.remove();
 })
 
-
-console.log(inputEl);
