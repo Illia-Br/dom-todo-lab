@@ -23,6 +23,9 @@ resetButtonEl.addEventListener('click', function(evt) {
   inputEl.value = '';
 })
 
+ulEl.addEventListener('click', function(evt) {
+  evt.target.remove();
+})
 
 
 console.log(inputEl);
